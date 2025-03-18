@@ -1,34 +1,107 @@
-# Cadastro de Usuários - Teste AutoMind
 
-Este é um sistema de cadastro de usuários que fiz utilizando C# + .net. O sistema solicita o nome, email e idade do usuário, realizando validações para garantir que os dados fornecidos sejam válidos, também exibe a lista dos usuários cadastro e dá para buscar usuário por nome.
+# Cadastro de Usuários - **Teste AutoMind**  
+Sistema de cadastro de usuários feito em **C# + .NET**, que solicita nome, email e idade, realizando validações antes de armazenar os dados em memória. É possível listar todos os usuários e buscar por nome.
 
-## Funcionalidades
+---
 
-1. Cadastro de Usuário : O sistema permite o cadastro de usuários com as seguintes informações:
-   - Nome (apenas letras)
-   - Email (deve conter o símbolo `@`)
-   - Idade (deve ser um número inteiro)
+## 🚀 Funcionalidades
 
-2. Validação de Dados :
-   - O nome deve ser composto apenas por letras.
-   - O email deve conter o símbolo `@`.
-   - A idade deve ser um número inteiro válido.
+### 1. Cadastro de Usuário – `CadastrarUsuario()`  
+Permite o cadastro de usuários com:
+- **Nome** (apenas letras)
+- **Email** (deve conter o símbolo `@`)
+- **Idade** (número inteiro)
 
-3. Armazenamento de Usuários : Após o cadastro, as informações do usuário são armazenadas em uma lista e uma mensagem de sucesso é exibida.
+**Trecho de Código:**
+```csharp
+Console.WriteLine("Digite o seu nome:");
+string nome = Console.ReadLine();
+```
 
-4. Listagem de usuários : Após o cadastro, é possível saber todos os usuários cadastrados no sitema.
+---
 
-5. Busca de usuário por nome: Após o cadastro dos usuários, é possível buscar o usuário pelo seu nome e irá aparecer suas informações.
+### 2. Validação de Dados  
+Valida se:
+- Nome contém apenas letras.
+- Email contém `@`.
+- Idade é um número inteiro válido.
 
-   ## Como Rodar o Projeto
+**Verificação de @ no Email:**
+```csharp
+while (!email.Contains("@"))
+{
+    Console.WriteLine("Por favor, digite um email válido contendo '@'.");
+    email = Console.ReadLine();
+}
+```
 
-1. **Pré-requisitos**:
-   - Instale o [.NET SDK](https://dotnet.microsoft.com/download).
-   
-2. **Passos para execução**:
-   - Clone este repositório.
-   - Abra o terminal ou prompt de comando na pasta do projeto.
-   - Execute o seguinte comando para rodar o programa:
+**Verificação se a Idade é Número Inteiro:**
+```csharp
+bool idadeValida = int.TryParse(Console.ReadLine(), out int idade);
+while (!idadeValida)
+{
+    Console.WriteLine("Idade inválida. Digite um número inteiro:");
+    idadeValida = int.TryParse(Console.ReadLine(), out idade);
+}
+```
 
-   ```bash
-   dotnet run
+---
+
+### 3. Armazenamento de Usuários  
+Usuários são armazenados numa lista em memória.
+
+**Trecho de Código:**
+```csharp
+usuarios.Add(novoUsuario);
+```
+
+---
+
+### 4. Listagem de Usuários  
+Exibe todos os usuários cadastrados.
+
+**Trecho de Código:**
+```csharp
+foreach (InformacoesUsuario usuario in usuarios)
+{
+    Console.WriteLine($"Nome: {usuario.Nome}, Email: {usuario.Email}, Idade: {usuario.Idade}");
+}
+```
+
+---
+
+### 5. Busca por Nome  
+Permite buscar um usuário pelo nome.
+
+**Trecho de Código:**
+```csharp
+var usuarioEncontrado = usuarios.Find(u => u.Nome.Equals(nomeBusca, StringComparison.OrdinalIgnoreCase));
+```
+
+---
+
+## ⚙️ Como Rodar o Projeto
+
+### Pré-requisitos:
+- [.NET SDK](https://dotnet.microsoft.com/download)
+
+### Passos:
+1. Clone o repositório.
+2. Navegue até a pasta do projeto.
+3. Execute:
+```bash
+dotnet run
+```
+
+---
+
+## 🟢 Diferenciais Implementados
+
+- Validação de dados completa.
+- Armazenamento dinâmico em lista.
+- Busca eficiente por nome.
+- Feedback visual com mensagens de sucesso ou erro.
+
+---
+
+**Feito com dedicação por Ailton.**
