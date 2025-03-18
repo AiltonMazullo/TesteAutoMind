@@ -19,3 +19,16 @@ Este é um sistema de cadastro de usuários que fiz utilizando C# + .net. O sist
 4. Listagem de usuários : Após o cadastro, é possível saber todos os usuários cadastrados no sitema.
 
 5. Busca de usuário por nome: Após o cadastro dos usuários, é possível buscar o usuário pelo seu nome e irá aparecer suas informações.
+
+   ## Como Rodar o Projeto
+
+1. **Pré-requisitos**:
+   - Instale o [.NET SDK](https://dotnet.microsoft.com/download).
+   
+2. **Passos para execução**:
+   - Clone este repositório.
+   - Abra o terminal ou prompt de comando na pasta do projeto.
+   - Execute o seguinte comando para rodar o programa:
+
+   ```bash
+   dotnet run
