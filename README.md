@@ -8,7 +8,7 @@ Sistema de cadastro de usuários feito em **C# + .NET**, que solicita nome, emai
 
 ### 1. Cadastro de Usuário – `CadastrarUsuario()`  
 Permite o cadastro de usuários com:
-- **Nome** (apenas letras)
+- **Nome** 
 - **Email** (deve conter o símbolo `@`)
 - **Idade** (número inteiro)
 
@@ -22,7 +22,6 @@ string nome = Console.ReadLine();
 
 ### 2. Validação de Dados  
 Valida se:
-- Nome contém apenas letras.
 - Email contém `@`.
 - Idade é um número inteiro válido.
 
