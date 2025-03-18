@@ -82,7 +82,7 @@ var usuarioEncontrado = usuarios.Find(u => u.Nome.Equals(nomeBusca, StringCompar
 ## ⚙️ Como Rodar o Projeto
 
 ### Pré-requisitos:
-- [.NET SDK](https://dotnet.microsoft.com/download)
+- INSTALE [.NET SDK](https://dotnet.microsoft.com/download)
 
 ### Passos:
 1. Clone o repositório.
@@ -99,8 +99,8 @@ dotnet run
 - Validação de dados completa.
 - Armazenamento dinâmico em lista.
 - Busca eficiente por nome.
-- Feedback visual com mensagens de sucesso ou erro.
+- Feedback com mensagens de sucesso ou erro.
 
 ---
 
-**Feito com dedicação por Ailton.**
+Criado por: Ailton Rodrigues Mazullo Neto | Contato: ailtonrodriguesdev@gmail.com
